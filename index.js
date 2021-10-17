@@ -10,11 +10,9 @@ disbut(client)
 client.login("ODk5MDI4OTM5NzY1MzQ2MzA0.YWsz8g.Wsn3M0g7p-eKjBV3zkfA-5JSzdE")
 
 //Status Details
-const clientDetail = {
-  guilds: client.guilds.cache.size,
-  users: client.users.cache.size,
-  channels: client.channels.cache.size
-};
+var guildsCount = client.guilds.cache.size
+var usersCount = client.users.cache.size
+var channelsCount = client.channels.cache.size
 
 //Config the status of the bot
 client.on("ready", (_ready) => {
@@ -22,6 +20,9 @@ client.on("ready", (_ready) => {
     client.user.setActivity(`b!help | ${guildsCount} Server`)
      setTimeout(function () {
       (`b!help | ${usersCount} Users`)()
+   }, 10000)
+     setTimeout(function () {
+       (`b!help | ${channelsCount} Channels`)()
    }, 10000)
 
 })
