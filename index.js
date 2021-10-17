@@ -19,7 +19,7 @@ const clientDetail = {
 //Config the status of the bot
 client.on("ready", (_ready) => {
     console.log("-- Bot Maker is online --")
-    client.user.setActivity(`b!help | ${client.guilds.cache.size}`)
+    client.user.setActivity(`b!help | ${client.guilds.cache.size} Server`)
 
 })
 
