@@ -44,7 +44,7 @@ client.on("message", message => {
 client.on("message", message => {
     if (message.content == "b!create"){
       setTimeout(function () {
-        message.author.delete()
+        message.delete()
      }, 5000)
         var createEmbed = new Discord.MessageEmbed()
           .setTitle("What Bot do you want?")
