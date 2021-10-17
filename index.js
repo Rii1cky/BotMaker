@@ -27,7 +27,7 @@ client.on("ready", (_ready) => {
 client.on("message", message => {
   if (message.content == "b!help"){
     setTimeout(function () {
-      message.author.delete()
+      message.delete()
    }, 5000)
     var helpEmbed = new Discord.MessageEmbed()
       .setTitle("🚀 HOW TO CREATE A BOT")
