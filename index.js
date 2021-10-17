@@ -6,9 +6,6 @@ const { MessageActionRow } = require('discord-buttons');
 const disbut = require("discord-buttons")
 disbut(client)
 
-//Import the emojis
-const config = require("../Bot Maker/config/emojis.json")
-
 //Login into the bot
 client.login("ODk5MDI4OTM5NzY1MzQ2MzA0.YWsz8g.Wsn3M0g7p-eKjBV3zkfA-5JSzdE")
 
