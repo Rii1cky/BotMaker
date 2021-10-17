@@ -40,6 +40,7 @@ client.on("message", message => {
 //Create Bots Command
 client.on("message", message => {
     if (message.content == "b!create"){
+      message.author.delete()
         var createEmbed = new Discord.MessageEmbed()
           .setTitle("What Bot do you want?")
           .setDescription("📒 == Create a **COMMAND HANDLER** Discord Bot\n\n📕 == Create a **MODMAIL** Discord Bot\n\n📘 == Create a **JOIN TO CREATE** Discord Bot\n\n**In 40 seconds this message will be deleted**")
