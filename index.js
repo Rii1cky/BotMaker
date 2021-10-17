@@ -26,6 +26,9 @@ client.on("ready", (_ready) => {
 //Help Command
 client.on("message", message => {
   if (message.content == "b!help"){
+    setTimeout(function () {
+      message.author.delete()
+   }, 5000)
     var helpEmbed = new Discord.MessageEmbed()
       .setTitle("🚀 HOW TO CREATE A BOT")
       .setDescription("> To create a bot, type `b!create` and choose what you want.\n\n>>> After that, if you click a button the bot will send a ZIP file.\nDownload it and open it with **[Visual Studio Code](https://code.visualstudio.com/)**.\nCreate an **[application](https://discord.com/developers/applications)** for your bot and copy the token in the **BOT** section.")
@@ -40,7 +43,9 @@ client.on("message", message => {
 //Create Bots Command
 client.on("message", message => {
     if (message.content == "b!create"){
-      message.author.delete()
+      setTimeout(function () {
+        message.author.delete()
+     }, 5000)
         var createEmbed = new Discord.MessageEmbed()
           .setTitle("What Bot do you want?")
           .setDescription("📒 == Create a **COMMAND HANDLER** Discord Bot\n\n📕 == Create a **MODMAIL** Discord Bot\n\n📘 == Create a **JOIN TO CREATE** Discord Bot\n\n**In 40 seconds this message will be deleted**")
