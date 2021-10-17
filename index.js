@@ -9,10 +9,17 @@ disbut(client)
 //Login into the bot
 client.login("ODk5MDI4OTM5NzY1MzQ2MzA0.YWsz8g.Wsn3M0g7p-eKjBV3zkfA-5JSzdE")
 
+//Status Details
+const clientDetail = {
+  guilds: client.guilds.cache.size,
+  users: client.users.cache.size,
+  channels: client.channels.cache.size
+};
+
 //Config the status of the bot
 client.on("ready", (_ready) => {
     console.log("-- Bot Maker is online --")
-    client.user.setActivity(`b!help | Making Bots`)
+    client.user.setActivity(`b!help | ${client.guilds.cache.size}`)
 
 })
 
@@ -64,8 +71,9 @@ client.on("message", message => {
 
 //Send the Command Handler file
 client.on("clickButton", async (button) => {
+  button.reply.defer()
   if (button.id == "handlerButton"){
-     button.message.channel.send("**Command Handler:**", { files: ["handler.zip"]})
+     button.message.channel.send("**Command Handler:**", { files: ["Handler.zip"]})
        .then(msg => {
          msg.delete({ timeout: 50000 })
  })
@@ -90,6 +98,7 @@ client.on("clickButton", async (button) => {
 
 //Send the ModMail file
 client.on("clickButton", async (button) => {
+  button.reply.defer()
   if (button.id == "modmailButton"){
      button.message.channel.send("**ModMail:**", { files: ["ModMail.zip"]})
        .then(msg => {
@@ -116,8 +125,9 @@ client.on("clickButton", async (button) => {
 
 //Send the Join To Create file
 client.on("clickButton", async (button) => {
+  button.reply.defer()
   if (button.id == "joinButton"){
-     button.message.channel.send("**Join To Create:**", { files: ["jointocreate.zip"]})
+     button.message.channel.send("**Join To Create:**", { files: ["JoinToCreate.zip"]})
        .then(msg => {
          msg.delete({ timeout: 50000 })
  })
