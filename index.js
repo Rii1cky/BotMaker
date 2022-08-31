@@ -9,6 +9,30 @@ disbut(client)
 //Login into the bot
 client.login("Your Token")
 
+//Anti Crash System
+module.exports = client => {
+  process.on('unhandledRejection', (reason, p) => {
+      console.log('Bot Maker [::] Anti Crash System - Unhandled Rejection Catched');
+      console.log(reason, p);
+  });
+  process.on("uncaughtException", (err, origin) => {
+      console.log('Bot Maker [::] Anti Crash System - Uncaught Exception Catched');
+      console.log(err, origin);
+  }) 
+  process.on('uncaughtExceptionMonitor', (err, origin) => {
+      console.log('Bot Maker [::] Anti Crash System - Uncaught Exception Catched (MONITOR)');
+      console.log(err, origin);
+  });
+  process.on('multipleResolves', (type, promise, reason) => {
+      console.log('Bot Maker [::] Anti Crash System - Multiple Resolves Catched');
+      console.log(type, promise, reason)
+  });
+  process.on('requestHandler', (type, promise, reason) => {
+      console.log('Bot Maker [::] Anti Crash System - Request Handler Catched')
+      console.log(type, promise, reason)
+  })
+}
+
 //Status Details
 const clientDetail = {
   guilds: client.guilds.cache.size,
@@ -18,9 +42,9 @@ const clientDetail = {
 
 //Config the status of the bot
 client.on("ready", (_ready) => {
-    console.log("-- Bot Maker is online --")
+    console.log("[CLIENT] Bot Maker is now online")
     client.user.setActivity(`b!help | ${client.guilds.cache.size} Server`)
-    console.log("-- I'm ready to make bots --")
+    console.log("[CLIENT] Status Activity setted")
 })
 
 //Help Command
