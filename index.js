@@ -7,7 +7,7 @@ const disbut = require("discord-buttons")
 disbut(client)
 
 //Login into the bot
-client.login("ODk5MDI4OTM5NzY1MzQ2MzA0.YWsz8g.Wsn3M0g7p-eKjBV3zkfA-5JSzdE")
+client.login("Your Token")
 
 //Status Details
 const clientDetail = {
