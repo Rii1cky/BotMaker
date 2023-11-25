@@ -8,9 +8,4 @@ A simple bot maker for discord users who dont know how to code a bot
 2. Install all needed packages by using  `npm install`
 3. Start the bot with `node index.js`
 
-## Credits
-
-If you're using this code support me by join my server or inviting my own music bot
-
 My Music Bot: https://dsc.gg/bestmusicbot
-My Server: https://dsc.gg/moon-dev
